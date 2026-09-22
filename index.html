@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuizMaster — server-graded quizzes with a real clock</title>
+    <meta
+      name="description"
+      content="QuizMaster is a timed quiz platform with a live countdown and server-side scoring so answers never reach the browser early."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="wrap topbar__inner">
+        <a class="brand" href="#top">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="22" height="22">
+              <circle
+                cx="12"
+                cy="12"
+                r="9.5"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+              />
+              <path
+                d="M12 6.5V12l3.5 2"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+              />
+            </svg>
+          </span>
+          QuizMaster
+        </a>
+        <nav class="topnav">
+          <a href="#features">Features</a>
+          <a href="#how">How it works</a>
+          <a href="#security">Security</a>
+        </nav>
+        <a
+          class="btn btn--ghost topnav__cta"
+          href="https://github.com/akashverma6565/UpStartInterns.git"
+          target="_blank"
+          rel="noopener"
+          >View repo</a
+        >
+      </div>
+    </header>
+
+    <main id="top">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="wrap hero__grid">
+          <div class="hero__copy">
+            <p class="kicker">Full-stack quiz platform</p>
+            <h1>The clock doesn't lie, and neither does the score.</h1>
+            <p class="hero__lede">
+              QuizMaster runs timed quizzes where the countdown is real and the
+              grading happens on the server. Students never see a correct answer
+              before they submit &mdash; because it never leaves the database
+              until they do.
+            </p>
+            <div class="hero__actions">
+              <a
+                class="btn btn--primary"
+                href="https://github.com/akashverma6565/UpStartInterns.git"
+                target="_blank"
+                rel="noopener"
+                >View on GitHub</a
+              >
+              <a class="btn btn--text" href="#how"
+                >See how scoring works &darr;</a
+              >
+            </div>
+            <dl class="hero__stats">
+              <div>
+                <dt>Timer</dt>
+                <dd>Auto-submits at zero</dd>
+              </div>
+              <div>
+                <dt>Scoring</dt>
+                <dd>Server-side, always</dd>
+              </div>
+              <div>
+                <dt>Roles</dt>
+                <dd>Student &amp; Admin</dd>
+              </div>
+            </dl>
+          </div>
+
+          <div class="hero__visual" aria-hidden="true">
+            <svg
+              viewBox="0 0 320 320"
+              class="timer-svg"
+              role="img"
+              aria-label="Countdown timer illustration"
+            >
+              <circle
+                cx="160"
+                cy="160"
+                r="128"
+                fill="none"
+                stroke="#232847"
+                stroke-width="14"
+              />
+              <circle
+                cx="160"
+                cy="160"
+                r="128"
+                fill="none"
+                stroke="#FFB648"
+                stroke-width="14"
+                stroke-linecap="round"
+                stroke-dasharray="804"
+                stroke-dashoffset="210"
+                transform="rotate(-90 160 160)"
+              />
+              <text
+                x="160"
+                y="150"
+                text-anchor="middle"
+                class="timer-svg__time"
+              >
+                04:12
+              </text>
+              <text
+                x="160"
+                y="180"
+                text-anchor="middle"
+                class="timer-svg__label"
+              >
+                time remaining
+              </text>
+              <g class="timer-svg__bubbles">
+                <circle
+                  cx="76"
+                  cy="256"
+                  r="16"
+                  fill="#171B2E"
+                  stroke="#57E8C7"
+                  stroke-width="2"
+                />
+                <text
+                  x="76"
+                  y="261"
+                  text-anchor="middle"
+                  class="timer-svg__bubble-letter"
+                >
+                  B
+                </text>
+                <circle
+                  cx="122"
+                  cy="278"
+                  r="16"
+                  fill="#57E8C7"
+                  stroke="#57E8C7"
+                  stroke-width="2"
+                />
+                <text
+                  x="122"
+                  y="283"
+                  text-anchor="middle"
+                  class="timer-svg__bubble-letter timer-svg__bubble-letter--dark"
+                >
+                  A
+                </text>
+                <circle
+                  cx="198"
+                  cy="278"
+                  r="16"
+                  fill="#171B2E"
+                  stroke="#3A4166"
+                  stroke-width="2"
+                />
+                <text
+                  x="198"
+                  y="283"
+                  text-anchor="middle"
+                  class="timer-svg__bubble-letter"
+                >
+                  C
+                </text>
+                <circle
+                  cx="244"
+                  cy="256"
+                  r="16"
+                  fill="#171B2E"
+                  stroke="#3A4166"
+                  stroke-width="2"
+                />
+                <text
+                  x="244"
+                  y="261"
+                  text-anchor="middle"
+                  class="timer-svg__bubble-letter"
+                >
+                  D
+                </text>
+              </g>
+            </svg>
+          </div>
+        </div>
+      </section>
+
+      <!-- FEATURES -->
+      <section class="features" id="features">
+        <div class="wrap">
+          <h2>What's actually in the app</h2>
+          <p class="section-lede">
+            Four things that came out of building this to a real spec, not a
+            tutorial.
+          </p>
+
+          <div class="feature-grid">
+            <article class="feature">
+              <span class="feature__bubble">A</span>
+              <h3>Role-based access</h3>
+              <p>
+                Students take quizzes. Admins build and manage them. Signing in
+                routes each person to the right view based on their role.
+              </p>
+            </article>
+            <article class="feature">
+              <span class="feature__bubble feature__bubble--filled">B</span>
+              <h3>Live countdown, real auto-submit</h3>
+              <p>
+                Every quiz runs a per-question or per-quiz timer. When it hits
+                zero, whatever's answered gets submitted automatically &mdash;
+                no silent expiry, no lost attempt.
+              </p>
+            </article>
+            <article class="feature">
+              <span class="feature__bubble">C</span>
+              <h3>Server-side scoring</h3>
+              <p>
+                The correct answer is stripped out before a question is ever
+                sent to the browser. Grading happens after submission, against
+                the stored key.
+              </p>
+            </article>
+            <article class="feature">
+              <span class="feature__bubble">D</span>
+              <h3>Aggregated leaderboard</h3>
+              <p>
+                Scores roll up into a leaderboard per quiz, so students can see
+                where an attempt landed relative to everyone else who took it.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- HOW IT WORKS -->
+      <section class="how" id="how">
+        <div class="wrap">
+          <h2>From login to leaderboard</h2>
+          <ol class="steps">
+            <li class="step">
+              <span class="step__num">1</span>
+              <div>
+                <h3>Sign in</h3>
+                <p>
+                  The app checks the account's role and sends students and
+                  admins to different parts of the app.
+                </p>
+              </div>
+            </li>
+            <li class="step">
+              <span class="step__num">2</span>
+              <div>
+                <h3>Start the quiz</h3>
+                <p>
+                  Questions load without their answers attached, and the
+                  countdown starts the moment the first one renders.
+                </p>
+              </div>
+            </li>
+            <li class="step">
+              <span class="step__num">3</span>
+              <div>
+                <h3>Submit, or get auto-submitted</h3>
+                <p>
+                  Answers post to the server, which checks them against the
+                  stored key. Run out the clock and the current answers go in
+                  for you.
+                </p>
+              </div>
+            </li>
+            <li class="step">
+              <span class="step__num">4</span>
+              <div>
+                <h3>Check the leaderboard</h3>
+                <p>
+                  The score aggregates into the quiz's leaderboard right after
+                  grading, no refresh required.
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- SECURITY CALLOUT -->
+      <section class="security" id="security">
+        <div class="wrap security__inner">
+          <p class="security__eyebrow-free-label">
+            The rule this app is built around
+          </p>
+          <p class="security__statement">
+            An answer never reaches the browser before the quiz is submitted.
+          </p>
+          <p class="security__detail">
+            It's enforced at the query level with
+            <code>.select('-answer')</code> on every question document sent to a
+            student, not by hiding the field in the UI. That means opening dev
+            tools mid-quiz doesn't help &mdash; the correct option simply isn't
+            part of the payload yet.
+          </p>
+        </div>
+      </section>
+
+      <!-- CTA / FOOTER -->
+      <section class="cta">
+        <div class="wrap cta__inner">
+          <h2>Built to a spec, not a tutorial</h2>
+          <p>The full source is on GitHub.</p>
+          <a
+            class="btn btn--primary"
+            href="https://github.com/akashverma6565/UpStartInterns.git"
+            target="_blank"
+            rel="noopener"
+            >View the repository</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="wrap footer__inner">
+        <span
+          >QuizMaster &mdash; a timed quiz app with server-side grading.</span
+        >
+        <span class="footer__stack">
+          <span class="pill">Timed</span>
+          <span class="pill">Auto-submit</span>
+          <span class="pill">Leaderboard</span>
+        </span>
+      </div>
+    </footer>
+  </body>
+</html>
